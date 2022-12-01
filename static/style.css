@@ -1,0 +1,11 @@
+h1 {
+  color: red;
+}
+
+.name {
+  display: flex;
+}
+
+.description {
+  display: flex;
+}

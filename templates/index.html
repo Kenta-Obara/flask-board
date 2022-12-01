@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block body %}
+<h1>一言掲示板</h1>
+<div class="form">
+  <form action="/" method="POST">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" name="description" required></textarea>
+    </div>
+    <input type="submit" value="Post" />
+  </form>
+  <hr />
+  <section>
+    <article>
+      {% for post in posts %}
+      <div>
+        <h2>{{ post.name }}</h2>
+        <time>{{ post.date.strftime('%Y/%m/%d %H:%M:%S') }}</time>
+      </div>
+      <p>{{ post.description }}</p>
+      {% endfor %}
+    </article>
+  </section>
+</div>
+{% endblock %}
